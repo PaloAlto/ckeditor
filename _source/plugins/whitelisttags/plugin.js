@@ -100,10 +100,6 @@ CKEDITOR.plugins.add( 'whitelisttags', {
           var lastTag = depth[depth.length - 1],
               isWhitespace = /^(\s|&nbsp;)*$/.match(text);
 
-          // text should be in a p
-          if (!isWhitespace && ['b','i','em','strong','u','p'].indexOf(lastTag) === -1) {
-            text = '<p>' + text + '</p>';
-          }
 
           // lists can only directly contain list items
           if (!isWhitespace && (lastTag === 'ol' || lastTag === 'ul')) {
@@ -129,7 +125,7 @@ CKEDITOR.plugins.add( 'whitelisttags', {
     // add our parser to the paste event
     editor.on('paste', function (e) {
       if (e.data.html) {
-      editor.execCommand('whitelisttags', e.data.html);
+        editor.execCommand('whitelisttags', e.data.html);
         e.data.html = parsed;
         parsed = '';
       }
