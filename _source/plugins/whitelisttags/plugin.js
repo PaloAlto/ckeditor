@@ -71,7 +71,11 @@ CKEDITOR.plugins.add( 'whitelisttags', {
 
           var filteredTagName = getTagName(tagName, selfClosing);
 
-          if (!selfClosing) {
+          // in some browsers (at least firefox, chrome, and safari on a mac) the self-closing slash
+          // is removed before anything is pasted to the browser, so _no_ tags come in as self closing!
+          // in normal usage, however, the br tag is the only one we're worried about so we can just
+          // test for it. When we start allowing images in text areas then we'll need to revisit this issue
+          if (!selfClosing && tagName !== "br") {
             depth.push(tagName);
           }
 
