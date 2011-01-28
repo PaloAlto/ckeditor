@@ -30,26 +30,26 @@ CKEDITOR.plugins.add( 'whitelisttags', {
 
           var isListItem = (tagName === 'li'),
               listContainer = (/^[uo]l$/),
-              isListContainer = !isListItem && listContainer.match(tagName),
-              inListContainer = listContainer.match(depth[depth.length - 1]),
+              isListContainer = !isListItem && listContainer.test(tagName),
+              inListContainer = listContainer.test(depth[depth.length - 1]),
               listDepth = depth.join(',').split('li').length - 1;
 
           // list item not directly inside a list
           if (isListItem && !inListContainer) {
             return('p');
           }
-
-          // already inside an <li> - turn <li> into <p> and don't render <ul> or <ul>
-          if ((isListItem || isListContainer) && listDepth > 0) {
-            return (isListItem) ? 'p' : false;
-          }
-
+//
+//          // already inside an <li> - turn <li> into <p> and don't render <ul> or <ul>
+////          if ((isListItem || isListContainer) && listDepth > 0) {
+////            return (isListItem) ? 'p' : false;
+////          }
+//
           // non-list-item directly inside a list
           if (!isListItem && inListContainer) {
             return ('li');
           }
 
-          var isLegal = whitelist.match(tagName),
+          var isLegal = whitelist.test(tagName),
               isBlock = Boolean(CKEDITOR.dtd.$block[tagName]);
 
           if (isLegal) {
@@ -102,7 +102,7 @@ CKEDITOR.plugins.add( 'whitelisttags', {
 
         parser.onText = function (text) {
           var lastTag = depth[depth.length - 1],
-              isWhitespace = /^(\s|&nbsp;)*$/.match(text);
+              isWhitespace = /^(\s|&nbsp;)*$/.test(text);
 
 
           // lists can only directly contain list items
@@ -129,8 +129,9 @@ CKEDITOR.plugins.add( 'whitelisttags', {
     // add our parser to the paste event
     editor.on('paste', function (e) {
       if (e.data.html) {
+        e.data.html = e.data.html.replace(/\n/g, '');
         editor.execCommand('whitelisttags', e.data.html);
-        e.data.html = parsed;
+        e.data.html = parsed.replace(/<p>(\s|&nbsp;)*<\/p>/g, '');
         parsed = '';
       }
     });
