@@ -1,5 +1,5 @@
 ﻿/*
-Copyright (c) 2003-2010, CKSource - Frederico Knabben. All rights reserved.
+Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.html or http://ckeditor.com/license
 */
 
@@ -34,8 +34,8 @@ CKEDITOR.lang['vi'] =
 	editorTitle : 'Bộ soạn thảo, %1, nhấn ALT + 0 để xem hướng dẫn.',
 
 	// ARIA descriptions.
-	toolbar	: 'Thanh công cụ',
-	editor	: 'Bộ soạn thảo',
+	toolbars	: 'Editor toolbars', // MISSING
+	editor		: 'Bộ soạn thảo',
 
 	// Toolbar buttons without dialogs.
 	source			: 'Mã HTML',
@@ -175,18 +175,19 @@ CKEDITOR.lang['vi'] =
 		langDirRTL		: 'Phải sang trái (RTL)',
 		acccessKey		: 'Phím hỗ trợ truy cập',
 		name			: 'Tên',
-		langCode		: 'Mã ngôn ngữ',
-		tabIndex		: 'Chỉ số của Tab',
-		advisoryTitle	: 'Nhan đề hướng dẫn',
+		langCode			: 'Mã ngôn ngữ',
+		tabIndex			: 'Chỉ số của Tab',
+		advisoryTitle		: 'Nhan đề hướng dẫn',
 		advisoryContentType	: 'Nội dung hướng dẫn',
 		cssClasses		: 'Lớp Stylesheet',
 		charset			: 'Bảng mã của tài nguyên được liên kết đến',
 		styles			: 'Kiểu (style)',
-		selectAnchor	: 'Chọn một điểm neo',
+		rel			: 'Relationship', // MISSING
+		selectAnchor		: 'Chọn một điểm neo',
 		anchorName		: 'Theo tên điểm neo',
-		anchorId		: 'Theo định danh thành phần',
-		emailAddress	: 'Thư điện tử',
-		emailSubject	: 'Tiêu đề thông điệp',
+		anchorId			: 'Theo định danh thành phần',
+		emailAddress		: 'Thư điện tử',
+		emailSubject		: 'Tiêu đề thông điệp',
 		emailBody		: 'Nội dung thông điệp',
 		noAnchors		: '(Không có điểm neo nào trong tài liệu)',
 		noUrl			: 'Hãy đưa vào đường dẫn liên kết (URL)',
@@ -601,9 +602,9 @@ CKEDITOR.lang['vi'] =
 
 	iframe :
 	{
-		title		: 'iFrame Properties', // MISSING
-		toolbar		: 'iFrame', // MISSING
-		noUrl		: 'Please type the iFrame URL', // MISSING
+		title		: 'IFrame Properties', // MISSING
+		toolbar		: 'IFrame', // MISSING
+		noUrl		: 'Please type the iframe URL', // MISSING
 		scrolling	: 'Enable scrollbars', // MISSING
 		border		: 'Show frame border' // MISSING
 	},
@@ -714,6 +715,8 @@ CKEDITOR.lang['vi'] =
 	{
 		title		: 'Thông tin về CKEditor',
 		dlgTitle	: 'Thông tin về CKEditor',
+		help	: 'Check $1 for help.', // MISSING
+		userGuide : 'CKEditor User\'s Guide', // MISSING
 		moreInfo	: 'Vui lòng ghé thăm trang web của chúng tôi để có thông tin về giấy phép:',
 		copy		: 'Bản quyền &copy; $1. Giữ toàn quyền.'
 	},
@@ -725,7 +728,7 @@ CKEDITOR.lang['vi'] =
 	{
 		anchor		: 'Điểm neo',
 		flash		: 'Flash',
-		iframe		: 'iFrame', // MISSING
+		iframe		: 'IFrame', // MISSING
 		hiddenfield	: 'Hidden Field', // MISSING
 		unknown		: 'Đối tượng không rõ ràng'
 	},
@@ -744,9 +747,64 @@ CKEDITOR.lang['vi'] =
 	toolbarCollapse	: 'Thu gọn thanh công cụ',
 	toolbarExpand	: 'Mở rộng thnah công cụ',
 
+	toolbarGroups :
+	{
+		document : 'Document', // MISSING
+		clipboard : 'Clipboard/Undo', // MISSING
+		editing : 'Editing', // MISSING
+		forms : 'Forms', // MISSING
+		basicstyles : 'Basic Styles', // MISSING
+		paragraph : 'Paragraph', // MISSING
+		links : 'Links', // MISSING
+		insert : 'Insert', // MISSING
+		styles : 'Styles', // MISSING
+		colors : 'Colors', // MISSING
+		tools : 'Tools' // MISSING
+	},
+
 	bidi :
 	{
 		ltr : 'Text direction from left to right', // MISSING
 		rtl : 'Text direction from right to left' // MISSING
+	},
+
+	docprops :
+	{
+		label : 'Document Properties', // MISSING
+		title : 'Document Properties', // MISSING
+		design : 'Design', // MISSING
+		meta : 'Meta Tags', // MISSING
+		chooseColor : 'Choose', // MISSING
+		other : 'Other...', // MISSING
+		docTitle :	'Page Title', // MISSING
+		charset : 	'Character Set Encoding', // MISSING
+		charsetOther : 'Other Character Set Encoding', // MISSING
+		charsetASCII : 'ASCII', // MISSING
+		charsetCE : 'Central European', // MISSING
+		charsetCT : 'Chinese Traditional (Big5)', // MISSING
+		charsetCR : 'Cyrillic', // MISSING
+		charsetGR : 'Greek', // MISSING
+		charsetJP : 'Japanese', // MISSING
+		charsetKR : 'Korean', // MISSING
+		charsetTR : 'Turkish', // MISSING
+		charsetUN : 'Unicode (UTF-8)', // MISSING
+		charsetWE : 'Western European', // MISSING
+		docType : 'Document Type Heading', // MISSING
+		docTypeOther : 'Other Document Type Heading', // MISSING
+		xhtmlDec : 'Include XHTML Declarations', // MISSING
+		bgColor : 'Background Color', // MISSING
+		bgImage : 'Background Image URL', // MISSING
+		bgFixed : 'Non-scrolling (Fixed) Background', // MISSING
+		txtColor : 'Text Color', // MISSING
+		margin : 'Page Margins', // MISSING
+		marginTop : 'Top', // MISSING
+		marginLeft : 'Left', // MISSING
+		marginRight : 'Right', // MISSING
+		marginBottom : 'Bottom', // MISSING
+		metaKeywords : 'Document Indexing Keywords (comma separated)', // MISSING
+		metaDescription : 'Document Description', // MISSING
+		metaAuthor : 'Author', // MISSING
+		metaCopyright : 'Copyright', // MISSING
+		previewHtml : '<p>This is some <strong>sample text</strong>. You are using <a href="javascript:void(0)">CKEditor</a>.</p>' // MISSING
 	}
 };

@@ -1,5 +1,5 @@
 ﻿/*
-Copyright (c) 2003-2010, CKSource - Frederico Knabben. All rights reserved.
+Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.html or http://ckeditor.com/license
 */
 
@@ -34,8 +34,8 @@ CKEDITOR.lang['ja'] =
 	editorTitle : 'リッチテキストエディタ, %1, ヘルプは ALT 0 を押してください',
 
 	// ARIA descriptions.
-	toolbar	: 'ツールバー',
-	editor	: 'リッチテキストエディタ',
+	toolbars	: 'Editor toolbars', // MISSING
+	editor		: 'リッチテキストエディタ',
 
 	// Toolbar buttons without dialogs.
 	source			: 'ソース',
@@ -175,18 +175,19 @@ CKEDITOR.lang['ja'] =
 		langDirRTL		: '右から左 (RTL)',
 		acccessKey		: 'アクセスキー',
 		name			: 'Name属性',
-		langCode		: '言語コード',
-		tabIndex		: 'タブインデックス',
-		advisoryTitle	: 'Title属性',
+		langCode			: '言語コード',
+		tabIndex			: 'タブインデックス',
+		advisoryTitle		: 'Title属性',
 		advisoryContentType	: 'Content Type属性',
 		cssClasses		: 'スタイルシートクラス',
 		charset			: 'リンクcharset属性',
 		styles			: 'スタイルシート',
-		selectAnchor	: 'アンカーを選択',
+		rel			: 'Relationship', // MISSING
+		selectAnchor		: 'アンカーを選択',
 		anchorName		: 'アンカー名',
-		anchorId		: 'エレメントID',
-		emailAddress	: 'E-Mail アドレス',
-		emailSubject	: '件名',
+		anchorId			: 'エレメントID',
+		emailAddress		: 'E-Mail アドレス',
+		emailSubject		: '件名',
 		emailBody		: '本文',
 		noAnchors		: '(ドキュメントにおいて利用可能なアンカーはありません。)',
 		noUrl			: 'リンクURLを入力してください。',
@@ -601,9 +602,9 @@ CKEDITOR.lang['ja'] =
 
 	iframe :
 	{
-		title		: 'iFrame Properties', // MISSING
-		toolbar		: 'iFrame', // MISSING
-		noUrl		: 'Please type the iFrame URL', // MISSING
+		title		: 'IFrame Properties', // MISSING
+		toolbar		: 'IFrame', // MISSING
+		noUrl		: 'Please type the iframe URL', // MISSING
 		scrolling	: 'Enable scrollbars', // MISSING
 		border		: 'Show frame border' // MISSING
 	},
@@ -714,6 +715,8 @@ CKEDITOR.lang['ja'] =
 	{
 		title		: 'CKEditorバージョン情報',
 		dlgTitle	: 'CKEditorバージョン情報',
+		help	: 'Check $1 for help.', // MISSING
+		userGuide : 'CKEditor User\'s Guide', // MISSING
 		moreInfo	: 'ライセンス情報の詳細はウェブサイトにて確認してください:',
 		copy		: 'Copyright &copy; $1. All rights reserved.'
 	},
@@ -725,7 +728,7 @@ CKEDITOR.lang['ja'] =
 	{
 		anchor		: 'アンカー',
 		flash		: 'Flash Animation',
-		iframe		: 'iFrame', // MISSING
+		iframe		: 'IFrame', // MISSING
 		hiddenfield	: 'Hidden Field', // MISSING
 		unknown		: 'Unknown Object'
 	},
@@ -744,9 +747,64 @@ CKEDITOR.lang['ja'] =
 	toolbarCollapse	: 'ツールバーを閉じる',
 	toolbarExpand	: 'ツールバーを開く',
 
+	toolbarGroups :
+	{
+		document : 'Document', // MISSING
+		clipboard : 'Clipboard/Undo', // MISSING
+		editing : 'Editing', // MISSING
+		forms : 'Forms', // MISSING
+		basicstyles : 'Basic Styles', // MISSING
+		paragraph : 'Paragraph', // MISSING
+		links : 'Links', // MISSING
+		insert : 'Insert', // MISSING
+		styles : 'Styles', // MISSING
+		colors : 'Colors', // MISSING
+		tools : 'Tools' // MISSING
+	},
+
 	bidi :
 	{
 		ltr : 'テキストの向き : 左から右へ',
 		rtl : 'テキストの向き : 右から左へ'
+	},
+
+	docprops :
+	{
+		label : 'Document Properties', // MISSING
+		title : 'Document Properties', // MISSING
+		design : 'Design', // MISSING
+		meta : 'Meta Tags', // MISSING
+		chooseColor : 'Choose', // MISSING
+		other : 'Other...', // MISSING
+		docTitle :	'Page Title', // MISSING
+		charset : 	'Character Set Encoding', // MISSING
+		charsetOther : 'Other Character Set Encoding', // MISSING
+		charsetASCII : 'ASCII', // MISSING
+		charsetCE : 'Central European', // MISSING
+		charsetCT : 'Chinese Traditional (Big5)', // MISSING
+		charsetCR : 'Cyrillic', // MISSING
+		charsetGR : 'Greek', // MISSING
+		charsetJP : 'Japanese', // MISSING
+		charsetKR : 'Korean', // MISSING
+		charsetTR : 'Turkish', // MISSING
+		charsetUN : 'Unicode (UTF-8)', // MISSING
+		charsetWE : 'Western European', // MISSING
+		docType : 'Document Type Heading', // MISSING
+		docTypeOther : 'Other Document Type Heading', // MISSING
+		xhtmlDec : 'Include XHTML Declarations', // MISSING
+		bgColor : 'Background Color', // MISSING
+		bgImage : 'Background Image URL', // MISSING
+		bgFixed : 'Non-scrolling (Fixed) Background', // MISSING
+		txtColor : 'Text Color', // MISSING
+		margin : 'Page Margins', // MISSING
+		marginTop : 'Top', // MISSING
+		marginLeft : 'Left', // MISSING
+		marginRight : 'Right', // MISSING
+		marginBottom : 'Bottom', // MISSING
+		metaKeywords : 'Document Indexing Keywords (comma separated)', // MISSING
+		metaDescription : 'Document Description', // MISSING
+		metaAuthor : 'Author', // MISSING
+		metaCopyright : 'Copyright', // MISSING
+		previewHtml : '<p>This is some <strong>sample text</strong>. You are using <a href="javascript:void(0)">CKEditor</a>.</p>' // MISSING
 	}
 };

@@ -1,5 +1,5 @@
 ﻿/*
-Copyright (c) 2003-2010, CKSource - Frederico Knabben. All rights reserved.
+Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.html or http://ckeditor.com/license
 */
 
@@ -34,8 +34,8 @@ CKEDITOR.lang['cy'] =
 	editorTitle : 'Rich text editor, %1, press ALT 0 for help.', // MISSING
 
 	// ARIA descriptions.
-	toolbar	: 'Toolbar', // MISSING
-	editor	: 'Rich Text Editor', // MISSING
+	toolbars	: 'Editor toolbars', // MISSING
+	editor		: 'Rich Text Editor', // MISSING
 
 	// Toolbar buttons without dialogs.
 	source			: 'Tarddle',
@@ -175,18 +175,19 @@ CKEDITOR.lang['cy'] =
 		langDirRTL		: 'Dde i\'r Chwith (RTL)',
 		acccessKey		: 'Allwedd Mynediad',
 		name			: 'Enw',
-		langCode		: 'Cod Iaith',
-		tabIndex		: 'Indecs Tab',
-		advisoryTitle	: 'Teitl Cynghorol',
+		langCode			: 'Cod Iaith',
+		tabIndex			: 'Indecs Tab',
+		advisoryTitle		: 'Teitl Cynghorol',
 		advisoryContentType	: 'Math y Cynnwys Cynghorol',
 		cssClasses		: 'Dosbarthiadau Dalen Arddull',
 		charset			: 'Set nodau\'r Adnodd Cysylltiedig',
 		styles			: 'Arddull',
-		selectAnchor	: 'Dewiswch Angor',
+		rel			: 'Relationship', // MISSING
+		selectAnchor		: 'Dewiswch Angor',
 		anchorName		: 'Gan Enw\'r Angor',
-		anchorId		: 'Gan Id yr Elfen',
-		emailAddress	: 'Cyfeiriad E-Bost',
-		emailSubject	: 'Testun y Message Subject',
+		anchorId			: 'Gan Id yr Elfen',
+		emailAddress		: 'Cyfeiriad E-Bost',
+		emailSubject		: 'Testun y Message Subject',
 		emailBody		: 'Pwnc y Neges',
 		noAnchors		: '(Dim angorau ar gael yn y ddogfen)',
 		noUrl			: 'Teipiwch URL y ddolen',
@@ -601,9 +602,9 @@ CKEDITOR.lang['cy'] =
 
 	iframe :
 	{
-		title		: 'iFrame Properties', // MISSING
-		toolbar		: 'iFrame', // MISSING
-		noUrl		: 'Please type the iFrame URL', // MISSING
+		title		: 'IFrame Properties', // MISSING
+		toolbar		: 'IFrame', // MISSING
+		noUrl		: 'Please type the iframe URL', // MISSING
 		scrolling	: 'Enable scrollbars', // MISSING
 		border		: 'Show frame border' // MISSING
 	},
@@ -714,6 +715,8 @@ CKEDITOR.lang['cy'] =
 	{
 		title		: 'Ynghylch CKEditor',
 		dlgTitle	: 'Ynghylch CKEditor',
+		help	: 'Check $1 for help.', // MISSING
+		userGuide : 'CKEditor User\'s Guide', // MISSING
 		moreInfo	: 'Am wybodaeth ynghylch trwyddedau, ewch i\'n gwefan:',
 		copy		: 'Hawlfraint &copy; $1. Cedwir pob hawl.'
 	},
@@ -725,7 +728,7 @@ CKEDITOR.lang['cy'] =
 	{
 		anchor		: 'Angor',
 		flash		: 'Animeiddiant Flash',
-		iframe		: 'iFrame', // MISSING
+		iframe		: 'IFrame', // MISSING
 		hiddenfield	: 'Hidden Field', // MISSING
 		unknown		: 'Gwrthrych Anhysbys'
 	},
@@ -744,9 +747,64 @@ CKEDITOR.lang['cy'] =
 	toolbarCollapse	: 'Cyfangu\'r Bar Offer',
 	toolbarExpand	: 'Ehangu\'r Bar Offer',
 
+	toolbarGroups :
+	{
+		document : 'Document', // MISSING
+		clipboard : 'Clipboard/Undo', // MISSING
+		editing : 'Editing', // MISSING
+		forms : 'Forms', // MISSING
+		basicstyles : 'Basic Styles', // MISSING
+		paragraph : 'Paragraph', // MISSING
+		links : 'Links', // MISSING
+		insert : 'Insert', // MISSING
+		styles : 'Styles', // MISSING
+		colors : 'Colors', // MISSING
+		tools : 'Tools' // MISSING
+	},
+
 	bidi :
 	{
 		ltr : 'Text direction from left to right', // MISSING
 		rtl : 'Text direction from right to left' // MISSING
+	},
+
+	docprops :
+	{
+		label : 'Document Properties', // MISSING
+		title : 'Document Properties', // MISSING
+		design : 'Design', // MISSING
+		meta : 'Meta Tags', // MISSING
+		chooseColor : 'Choose', // MISSING
+		other : 'Other...', // MISSING
+		docTitle :	'Page Title', // MISSING
+		charset : 	'Character Set Encoding', // MISSING
+		charsetOther : 'Other Character Set Encoding', // MISSING
+		charsetASCII : 'ASCII', // MISSING
+		charsetCE : 'Central European', // MISSING
+		charsetCT : 'Chinese Traditional (Big5)', // MISSING
+		charsetCR : 'Cyrillic', // MISSING
+		charsetGR : 'Greek', // MISSING
+		charsetJP : 'Japanese', // MISSING
+		charsetKR : 'Korean', // MISSING
+		charsetTR : 'Turkish', // MISSING
+		charsetUN : 'Unicode (UTF-8)', // MISSING
+		charsetWE : 'Western European', // MISSING
+		docType : 'Document Type Heading', // MISSING
+		docTypeOther : 'Other Document Type Heading', // MISSING
+		xhtmlDec : 'Include XHTML Declarations', // MISSING
+		bgColor : 'Background Color', // MISSING
+		bgImage : 'Background Image URL', // MISSING
+		bgFixed : 'Non-scrolling (Fixed) Background', // MISSING
+		txtColor : 'Text Color', // MISSING
+		margin : 'Page Margins', // MISSING
+		marginTop : 'Top', // MISSING
+		marginLeft : 'Left', // MISSING
+		marginRight : 'Right', // MISSING
+		marginBottom : 'Bottom', // MISSING
+		metaKeywords : 'Document Indexing Keywords (comma separated)', // MISSING
+		metaDescription : 'Document Description', // MISSING
+		metaAuthor : 'Author', // MISSING
+		metaCopyright : 'Copyright', // MISSING
+		previewHtml : '<p>This is some <strong>sample text</strong>. You are using <a href="javascript:void(0)">CKEditor</a>.</p>' // MISSING
 	}
 };

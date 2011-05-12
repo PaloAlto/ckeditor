@@ -1,5 +1,5 @@
 ﻿/*
-Copyright (c) 2003-2010, CKSource - Frederico Knabben. All rights reserved.
+Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.html or http://ckeditor.com/license
 */
 
@@ -181,7 +181,6 @@ CKEDITOR.dtd = (function()
         label : L,
         table : {thead:1,col:1,tbody:1,tr:1,colgroup:1,caption:1,tfoot:1},
         code : L,
-        script : N,
         tfoot : M,
         cite : L,
         li : P,
