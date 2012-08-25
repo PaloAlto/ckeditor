@@ -199,7 +199,8 @@ packages :
           '_source/plugins/whitelisttags/plugin.js',
           '_source/plugins/wordcount/plugin.js',
           '_source/plugins/charcount/plugin.js',
-          '_source/plugins/liveplantable/plugin.js'
+          '_source/plugins/liveplantable/plugin.js',
+          '_source/plugins/liveplanimage/plugin.js'
         ]
     }
 

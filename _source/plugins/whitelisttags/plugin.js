@@ -2,6 +2,15 @@
  * @file whitelisttags plugin.
  */
 
+
+/*
+
+'whitelist': ['b','i','strong','em',{'tagName':'img', 'attrs': ['src']}]
+
+
+
+ */
+
   // Register a plugin named "whitelisttags".
 CKEDITOR.plugins.add( 'whitelisttags', {
   init : function( editor )
@@ -11,6 +20,19 @@ CKEDITOR.plugins.add( 'whitelisttags', {
         editor.config.whitelist = ['b','i','em','strong','u','ul','ol','li','blockquote','p','br'];
       }
 
+    var whitelistObj = {};
+    for (var i = 0; i < editor.config.whitelist.length; i = i+1) {
+        if (typeof editor.config.whitelist[i] === 'string') {
+            // white list entry is specified as a string, meaning no extended options
+            whitelistObj[editor.config.whitelist[i]] = {
+                'tagName': editor.config.whitelist[i],
+                'attrs': false
+            };
+        } else if (typeof editor.config.whitelist[i].tagName === 'string') {
+            // white list entry is specified as an object containing options
+            whitelistObj[editor.config.whitelist[i].tagName] = editor.config.whitelist[i];
+        }
+    }
 
     if (typeof editor.config.whitelist_convert_blocks === 'undefined') {
       editor.config.whitelist_convert_blocks = true;
@@ -49,7 +71,7 @@ CKEDITOR.plugins.add( 'whitelisttags', {
             return ('li');
           }
 
-          var isLegal = whitelist.test(tagName),
+          var isLegal = typeof whitelistObj[tagName] === 'object',//whitelist.test(tagName),
               isBlock = Boolean(CKEDITOR.dtd.$block[tagName]);
 
           if (isLegal) {
@@ -75,12 +97,28 @@ CKEDITOR.plugins.add( 'whitelisttags', {
           // is removed before anything is pasted to the browser, so _no_ tags come in as self closing!
           // in normal usage, however, the br tag is the only one we're worried about so we can just
           // test for it. When we start allowing images in text areas then we'll need to revisit this issue
-          if (!selfClosing && tagName !== "br") {
+          // --update: addressed image issue by adding 'img', should do it
+          if (!selfClosing && (tagName !== "br" && tagName !== 'img')) {
             depth.push(tagName);
           }
 
+          // deal with attributes
+          // attributes come in as objects like this:
+          /*
+          {
+                align: "top",
+                src: "http://noahsarf.com/images/image017.jpg"
+           }
+           */
+          var attrs = [], key;
+          for (key in attributes) { if (attributes.hasOwnProperty(key)) {
+              if (filteredTagName && whitelistObj[filteredTagName].attrs && CKEDITOR.tools.indexOf(whitelistObj[filteredTagName].attrs, key) !== -1) {
+                  attrs.push(key + '="' + CKEDITOR.tools.htmlEncode(attributes[key]) + '"');
+              }
+          }}
+
           if (filteredTagName) {
-            parsed += (selfClosing ? "<" + filteredTagName + " />" : "<" + filteredTagName + ">");
+            parsed += (["<" + filteredTagName, attrs.join(' '), (selfClosing ? ">" : "/>")].join(' '));
           }
         };
 
