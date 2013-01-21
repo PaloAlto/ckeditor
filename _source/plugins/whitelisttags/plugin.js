@@ -113,9 +113,14 @@ CKEDITOR.plugins.add( 'whitelisttags', {
           var attrs = [], key;
           for (key in attributes) { if (attributes.hasOwnProperty(key)) {
               if (filteredTagName && whitelistObj[filteredTagName].attrs && CKEDITOR.tools.indexOf(whitelistObj[filteredTagName].attrs, key) !== -1) {
-                  attrs.push(key + '="' + CKEDITOR.tools.htmlEncode(attributes[key]) + '"');
+                  attrs.push(key + '="' + attributes[key] + '"');
               }
           }}
+
+          // special case for images. Only allow if they also have a data-uuid attribute.
+          if (filteredTagName === 'img' && !attributes.hasOwnProperty('data-uuid')) {
+              return;
+          }
 
           if (filteredTagName) {
             parsed += (["<" + filteredTagName, attrs.join(' '), (selfClosing ? ">" : "/>")].join(' '));
