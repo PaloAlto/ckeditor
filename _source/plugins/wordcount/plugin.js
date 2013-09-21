@@ -9,6 +9,7 @@ CKEDITOR.plugins.add( 'wordcount', {
     var fn, wordcountCmd;
 
     wordcountCmd = {
+        editorFocus: false,
         exec : function( editor, data )
         {
           // find the number of spaces

@@ -4,6 +4,7 @@
 
   // Register a plugin named "charcount".
 CKEDITOR.plugins.add( 'charcount', {
+
   init : function( editor )
   {
     var fn, charcountCmd, invalid = false, errorEl = false;
@@ -18,6 +19,7 @@ CKEDITOR.plugins.add( 'charcount', {
       reportCount = true;
     }
     charcountCmd = {
+        editorFocus: false,
         exec : function( editor, event ) {
           // find the number of spaces
           var plaintext = editor.getData().replace(/<.*?>/g, '').trim();
