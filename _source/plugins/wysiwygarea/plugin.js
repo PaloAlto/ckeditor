@@ -364,10 +364,15 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 			var scrollLeft = hostDocumentElement.$.scrollLeft;
 
 			// Simulating keyboard character input by dispatching a keydown of white-space text.
-			var keyEventSimulate = doc.$.createEvent( "KeyEvents" );
-			keyEventSimulate.initKeyEvent( 'keypress', true, true, win.$, false,
-				false, false, false, 0, 32 );
-			doc.$.dispatchEvent( keyEventSimulate );
+			// var keyEventSimulate = doc.$.createEvent( "KeyEvents" );
+			// keyEventSimulate.initKeyEvent( 'keypress', true, true, win.$, false,
+			// 	false, false, false, 0, 32 );
+			// doc.$.dispatchEvent( keyEventSimulate );
+
+
+			// The above fails in modern IEs, so this works better
+			$j.event.trigger({ type : 'keypress', which : 32 });
+
 
 			if ( scrollTop != hostDocumentElement.$.scrollTop || scrollLeft != hostDocumentElement.$.scrollLeft )
 				hostDocument.getWindow().$.scrollTo( scrollLeft, scrollTop );
